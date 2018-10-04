@@ -2,9 +2,9 @@ version: '2.1'
 
 services: 
   vidly:
-    build: ./node-docker
+    build: ./sapiens
     volumes:
-    - ./node-docker:/usr/src/app
+    - ./sapiens:/usr/src/app
     ports:
     - 5001:3000
     environment:
