@@ -1,0 +1,18 @@
+version: '2.1'
+
+services: 
+  vidly:
+    build: ./node-docker
+    volumes:
+    - ./node-docker:/usr/src/app
+    ports:
+    - 5001:3000
+    environment:
+      vidly_jwtPrivateKey: casa
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    ports: 
+      - 27018:27017
