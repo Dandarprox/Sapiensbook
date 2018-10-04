@@ -8,7 +8,7 @@ services:
     ports:
     - 5001:3000
     environment:
-      vidly_jwtPrivateKey: casa
+      sapiens_jwtPrivateKey: casa
     depends_on:
       - mongo
 
