@@ -38,11 +38,7 @@ const userSchema = new mongoose.Schema({
     maxlength: 50,
     default: ""
   },
-  profile: {
-    type: Object,
-    required: true,
-    default: {}
-  },
+  
   nacionality: {
     type: String,
     default: "Colombiano"
@@ -56,11 +52,10 @@ const userSchema = new mongoose.Schema({
     type: Array,
   },
   skills: {
-    type: Object
+    type: Array,
   },
   publications: {
-    type: Object,
-    default: {}
+    type: Array,
   }
 });
 
@@ -81,7 +76,6 @@ function validateUser(user) {
     lastname: Joi.string().min(3).max(50).required(),
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
-    profile: Joi.object().required(),
     languages: Joi.array().required(),
     skills: Joi.object().required()
   }
