@@ -77,7 +77,7 @@ function validateUser(user) {
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
     languages: Joi.array().required(),
-    skills: Joi.object().required()
+    skills: Joi.array().required()
   }
 
   return Joi.validate(user, schema)
