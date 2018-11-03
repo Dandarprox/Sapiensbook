@@ -13,6 +13,11 @@ router.get('/me', auth, async (req, res) => {
   res.send(user)
 })
 
+router.get('/all', auth, async (req, res) => {
+  const user = await User.find().select('-password')
+  res.send(user)
+})
+
 router.post('/', async (req, res) => {
   const { error } = validate(req.body)
   if(error) return res.status(400).send(error.details[0].message)
@@ -28,7 +33,7 @@ router.post('/', async (req, res) => {
     'study_areas',
     'organization',
     'profile',
-    'nacionality',
+    'nationality',
     'gender',
     'languages',
     'skills',

@@ -43,7 +43,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     default: {}
   },
-  nacionality: {
+  nationality: {
     type: String,
     default: "Colombiano"
   },
@@ -81,9 +81,11 @@ function validateUser(user) {
     lastname: Joi.string().min(3).max(50).required(),
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
-    profile: Joi.object().required(),
     languages: Joi.array().required(),
-    skills: Joi.object().required()
+    skills: Joi.object().required(),
+    organization: Joi.string(),
+    study_areas: Joi.array(),
+    nationality: Joi.string()
   }
 
   return Joi.validate(user, schema)
