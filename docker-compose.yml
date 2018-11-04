@@ -6,7 +6,7 @@ services:
     volumes:
     - ./sapiens:/usr/src/app
     ports:
-    - 5001:3000
+    - 3001:3000
     environment:
       sapiens_jwtPrivateKey: casa
     depends_on:
@@ -15,4 +15,4 @@ services:
   mongo:
     image: mongo
     ports: 
-      - 27018:27017
+      - 4001:27017
