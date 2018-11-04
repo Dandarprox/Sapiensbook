@@ -85,7 +85,8 @@ function validateUser(user) {
     skills: Joi.array().required(),
     organization: Joi.string(),
     study_areas: Joi.array(),
-    nationality: Joi.string()
+    nationality: Joi.string(),
+    gender: Joi.string()
   }
 
   return Joi.validate(user, schema)
