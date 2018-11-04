@@ -56,7 +56,7 @@ const userSchema = new mongoose.Schema({
     type: Array,
   },
   skills: {
-    type: String
+    type: Array
   },
   publications: {
     type: Object,
@@ -82,7 +82,7 @@ function validateUser(user) {
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
     languages: Joi.array().required(),
-    skills: Joi.string().required(),
+    skills: Joi.array().required(),
     organization: Joi.string(),
     study_areas: Joi.array(),
     nationality: Joi.string()
