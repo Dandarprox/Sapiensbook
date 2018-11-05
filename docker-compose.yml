@@ -16,3 +16,5 @@ services:
     image: mongo
     ports: 
       - 4001:27017
+    command: 
+      mongo sapiensbook --eval "db.dropDatabase()"
