@@ -38,8 +38,17 @@ const userSchema = new mongoose.Schema({
     maxlength: 50,
     default: ""
   },
+<<<<<<< HEAD
   
   nacionality: {
+=======
+  profile: {
+    type: Object,
+    required: true,
+    default: {}
+  },
+  nationality: {
+>>>>>>> fd43a7c0ef7b150c17cb8de335d4726d863add0d
     type: String,
     default: "Colombiano"
   },
@@ -52,7 +61,11 @@ const userSchema = new mongoose.Schema({
     type: Array,
   },
   skills: {
+<<<<<<< HEAD
     type: Array,
+=======
+    type: Array
+>>>>>>> fd43a7c0ef7b150c17cb8de335d4726d863add0d
   },
   publications: {
     type: Array,
@@ -77,7 +90,15 @@ function validateUser(user) {
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
     languages: Joi.array().required(),
+<<<<<<< HEAD
     skills: Joi.array().required()
+=======
+    skills: Joi.array().required(),
+    organization: Joi.string(),
+    study_areas: Joi.array(),
+    nationality: Joi.string(),
+    gender: Joi.string()
+>>>>>>> fd43a7c0ef7b150c17cb8de335d4726d863add0d
   }
 
   return Joi.validate(user, schema)

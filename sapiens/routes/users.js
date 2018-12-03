@@ -13,16 +13,23 @@ router.get('/me', auth, async (req, res) => {
   res.send(user)
 })
 
+<<<<<<< HEAD
 router.get('/all', async (req, res) => {
+=======
+router.get('/all', auth, async (req, res) => {
+>>>>>>> fd43a7c0ef7b150c17cb8de335d4726d863add0d
   const user = await User.find().select('-password')
   res.send(user)
 })
 
+<<<<<<< HEAD
 router.get('/:id', auth, async (req, res) => {
   const user = await User.findById(req.params.id).select('-password')
   res.send(user)
 })
 
+=======
+>>>>>>> fd43a7c0ef7b150c17cb8de335d4726d863add0d
 router.post('/', async (req, res) => {
   const { error } = validate(req.body)
   if(error) return res.status(400).send(error.details[0].message)
@@ -38,7 +45,7 @@ router.post('/', async (req, res) => {
     'study_areas',
     'organization',
     'profile',
-    'nacionality',
+    'nationality',
     'gender',
     'languages',
     'skills',
