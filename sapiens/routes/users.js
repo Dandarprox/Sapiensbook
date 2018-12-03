@@ -13,7 +13,7 @@ router.get('/me', auth, async (req, res) => {
   res.send(user)
 })
 
-router.get('/all', auth, async (req, res) => {
+router.get('/all', async (req, res) => {
   const user = await User.find().select('-password')
   res.send(user)
 })
