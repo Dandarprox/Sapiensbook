@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
         console.log(user.email);
         ldapClient.bind(
           "cn=" + user.email + ",ou=academy,dc=arqsoft,dc=unal,dc=edu,dc=co",
-          user.password,
+          req.body.password,
           function (err) {
             if (err) {
               res.send("El usuario no esta registrado en el directorio LDAP")
