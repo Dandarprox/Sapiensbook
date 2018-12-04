@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
         if (!validPassword) return res.status(400).send('Correo o contraseña inválidos');
 
         ldapClient.bind(
-          "cn=" + user.name + ",ou=academy,dc=arqsoft,dc=unal,dc=edu,dc=co",
+          "cn=" + user.email + ",ou=academy,dc=arqsoft,dc=unal,dc=edu,dc=co",
           user.password,
           function (err) {
             if (err) {
