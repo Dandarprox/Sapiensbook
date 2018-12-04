@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
 
         const validPassword = await bcrypt.compare(req.body.password, user.password);
         if (!validPassword) return res.status(400).send('Correo o contraseña inválidos');
-
+        console.log(user.email);
         ldapClient.bind(
           "cn=" + user.email + ",ou=academy,dc=arqsoft,dc=unal,dc=edu,dc=co",
           user.password,
