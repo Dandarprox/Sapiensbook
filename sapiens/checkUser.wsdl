@@ -2,24 +2,24 @@
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://35.237.5.35:8001/checkUser" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="checkUserService" targetNamespace="http://35.237.5.35:8001/checkUser">
   
 <types>
-    <schema targetNamespace="http://35.237.5.35:8001/checkUser" xmlns="http://www.w3.org/2001/XMLSchema">
+    <schema targetNamespace="http://35.237.5.35:8001/checkUser?wsdl" xmlns="http://www.w3.org/2001/XMLSchema">
     </schema>
   </types>
 
   <message name="checkUserRequest">
-    <part name="name" type="xs:string"/>
+    <part name="name" type="xsd:string"/>
   </message>
   <message name="checkUserResponse">
-    <part name="name" type="xs:string"/>
-    <part name="lastname" type="xs:string"/>
+    <part name="name" type="xsd:string"/>
+    <part name="lastname" type="xsd:string"/>
   </message>
   <portType name="checkUserPortType">
     <operation name="checkUser">
-      <input message="checkUserRequest"/>
-      <output message="checkUserResponse"/>
+      <input message="tns:checkUserRequest"/>
+      <output message="tns:checkUserResponse"/>
     </operation>
   </portType>
-  <binding name="checkUserBinding" type="checkUserPortType">
+  <binding name="checkUserBinding" type="tns:checkUserPortType">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="checkUser">
       <soap:operation soapAction="checkUser"/>
@@ -32,7 +32,7 @@
     </operation>
   </binding>
   <service name="checkUserWService">
-    <port binding="checkUserBinding" name="checkUserPort">
+    <port  name="checkUserPort" binding="tns:checkUserBinding">
       <soap:address location="http://35.237.5.35:8001/checkUser"/>
     </port>
   </service>
