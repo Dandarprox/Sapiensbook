@@ -20,7 +20,9 @@ var service = {
               console.log(user_aux.lastname);
               console.log("..............")
               console.log(args)
-              const users = await User.findOne({ name: args.name });
+              console.log("..............")
+              const users = await User.findOne(args);
+              console.log(users.name)
               return {  
                 name : users.name,
                 lastname : users.lastname
