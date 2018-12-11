@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="checkUserService" targetNamespace="http://localhost:8001/checkUser" xmlns="http://localhost:8001/checkUser" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions name="checkUserService" targetNamespace="http://35.237.5.35:8001/checkUser" xmlns="http://35.237.5.35:8001/checkUser" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <wsdl:message name="checkUserRequest">
     <wsdl:part name="name" type="xs:string"/>
   </wsdl:message>
   <wsdl:message name="checkUserResponse">
     <wsdl:part name="name" type="xs:string"/>
     <wsdl:part name="lastname" type="xs:string"/>
-    <wsdl:part name="organization" type="xs:string"/>
   </wsdl:message>
   <wsdl:portType name="checkUserPortType">
     <wsdl:operation name="checkUser">
@@ -28,7 +27,7 @@
   </wsdl:binding>
   <wsdl:service name="checkUserWService">
     <wsdl:port binding="checkUserBinding" name="checkUserPort">
-      <soap:address location="http://localhost:8001/checkUser"/>
+      <soap:address location="http://35.237.5.35:8001/checkUser"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
