@@ -15,11 +15,11 @@
   </message>
   <portType name="checkUserPortType">
     <operation name="checkUser">
-      <input message="tns:checkUserRequest"/>
-      <output message="tns:checkUserResponse"/>
+      <input message="checkUserRequest"/>
+      <output message="checkUserResponse"/>
     </operation>
   </portType>
-  <binding name="checkUserBinding" type="tns:checkUserPortType">
+  <binding name="checkUserBinding" type="checkUserPortType">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="checkUser">
       <soap:operation soapAction="checkUser"/>
@@ -32,7 +32,7 @@
     </operation>
   </binding>
   <service name="checkUserWService">
-    <port binding="tns:checkUserBinding" name="checkUserPort">
+    <port binding="checkUserBinding" name="checkUserPort">
       <soap:address location="http://35.237.5.35:8001/checkUser"/>
     </port>
   </service>
