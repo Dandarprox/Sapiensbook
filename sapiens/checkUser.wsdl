@@ -7,11 +7,11 @@
   </types>
 
   <message name="checkUserRequest">
-    <part name="name" type="xsd:string"/>
+    <part name="name" type="xsd:string" xsi:nillable="true"/>
   </message>
   <message name="checkUserResponse">
-    <part name="name" type="xsd:string"/>
-    <part name="lastname" type="xsd:string"/>
+    <part name="name" type="xsd:string" xsi:nillable="true"/>
+    <part name="lastname" type="xsd:string" xsi:nillable="true"/>
   </message>
   <portType name="checkUserPortType">
     <operation name="checkUser">
