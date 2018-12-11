@@ -18,6 +18,8 @@ var service = {
             checkUser : async function(args) { 
               const user_aux = await User.findOne({name: "Daniel"});
               console.log(user_aux.lastname);
+              console.log("..............")
+              console.log(args)
               const users = await User.findOne({ name: args.name });
               return {  
                 name : users.name,
