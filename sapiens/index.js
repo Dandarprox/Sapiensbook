@@ -16,13 +16,14 @@ var service = {
     checkUserWService: {
         checkUserPort: {
             checkUser : async function(args) { 
-              const user_aux = await User.findOne({name: "Daniel"});
-              console.log(user_aux.lastname);
-              console.log("..............")
-              console.log(args)
-              console.log("..............")
+              
+              console.log(".........................")
+              console.log("SOAP RESPONSE")
+              console.log(".........................")
               const users = await User.findOne(args);
               console.log(users.name)
+              console.log(users.lastname)
+              console.log(users.email)
               return {  
                 name : users.name,
                 lastname : users.lastname
