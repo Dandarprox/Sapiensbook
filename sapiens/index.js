@@ -15,8 +15,8 @@ require('./startup/validation')();
 var service = {
     checkUserWService: {
         checkUserPort: {
-            checkUser : function(args) { 
-              const users = User.findOne({ name: args.name });
+            checkUser : async function(args) { 
+              const users = await User.findOne({ name: args.name });
               return {  
                 name : users.name,
                 lastname : users.lastname
