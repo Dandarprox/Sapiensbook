@@ -2,9 +2,9 @@ version: '2.1'
 
 services: 
   vidly:
-    build: ./sapiens
+    build: .
     volumes:
-    - ./sapiens:/usr/src/app
+    - .:/usr/src/app
     ports:
     - 3001:3000
     environment:
