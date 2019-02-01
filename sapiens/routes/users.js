@@ -13,8 +13,13 @@ router.get('/me', auth, async (req, res) => {
   res.send(user)
 })
 
-router.get('/all', auth, async (req, res) => {
+router.get('/all', async (req, res) => {
   const user = await User.find().select('-password')
+  res.send(user)
+})
+
+router.get('/:id', auth, async (req, res) => {
+  const user = await User.findById(req.params.id).select('-password')
   res.send(user)
 })
 
@@ -24,6 +29,7 @@ router.post('/', async (req, res) => {
 
   let user = await User.findOne({ email: req.body.email})
   if(user) return res.status(400).send('Un usuario con este correo ya existe')
+  
 
   user = new User(_.pick(req.body, [
     'name', 

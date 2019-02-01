@@ -56,11 +56,10 @@ const userSchema = new mongoose.Schema({
     type: Array,
   },
   skills: {
-    type: Array
+    type: Array,
   },
   publications: {
-    type: Object,
-    default: {}
+    type: Array,
   }
 });
 
