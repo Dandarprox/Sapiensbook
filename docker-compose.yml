@@ -7,6 +7,7 @@ services:
     - .:/usr/src/app
     ports:
     - 3001:3000
+    - 8001:8001
     environment:
       sapiens_jwtPrivateKey: casa
     depends_on:
