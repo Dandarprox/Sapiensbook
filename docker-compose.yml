@@ -1,7 +1,7 @@
 version: '2.1'
 
 services: 
-  vidly:
+  users-ms:
     build: ./sapiens
     volumes:
     - ./sapiens:/usr/src/app
@@ -9,15 +9,16 @@ services:
     - 3001:3000
     - 8001:8001
     environment:
-      sapiens_jwtPrivateKey: casa
+      sapiens_jwtPrivateKey: superSecret
     depends_on:
       - mongo
     labels:
       io.rancher.scheduler.affinity:host_label: key1=par1
 
-  mongo:
+  users-db:
     image: mongo
     ports: 
       - 4001:27017
     labels:
       io.rancher.scheduler.affinity:host_label: key1=par1
+
