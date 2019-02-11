@@ -12,7 +12,7 @@ const express = require('express');
 const router = express.Router();
 
 const ldapOptions = {
-  url: 'ldap://35.237.5.35:389',
+  url: 'ldap://35.243.152.223:389',
   timeout: 100000,
   connectTimeout: 10000,
   reconnect: true
