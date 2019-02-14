@@ -29,7 +29,6 @@ router.post('/', async (req, res) => {
 
   let user = await User.findOne({ email: req.body.email})
   if(user) return res.status(400).send('Un usuario con este correo ya existe')
-  
 
   user = new User(_.pick(req.body, [
     'name', 
@@ -58,5 +57,7 @@ router.post('/', async (req, res) => {
       'email'
     ]))
 })
+
+
 
 module.exports = router
