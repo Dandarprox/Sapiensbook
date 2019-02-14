@@ -46,7 +46,7 @@ var server = http.createServer(function(request,response) {
     response.end("404: Not Found: " + request.url);
 });
 
-server.listen(8001);
+server.listen(8002);
 soap.listen(server, '/checkUser', service, xml);
 
 const io = require('socket.io')(server);
