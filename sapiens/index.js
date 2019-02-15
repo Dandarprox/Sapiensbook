@@ -48,7 +48,7 @@ var xml = require('fs').readFileSync('checkUser.wsdl', 'utf8');
 
 var sticky = require('socketio-sticky-session');
 var sticky_options = {
-  proxy: true, //activate layer 4 patching
+  proxy: false, //activate layer 4 patching
   header: 'x-forwarded-for', //provide here your header containing the users ip
 }
 
