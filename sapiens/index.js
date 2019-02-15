@@ -20,7 +20,6 @@ app.get('/chat', function(req, res) {
 
 app.use(cors())
 
-
 var service = {
   checkUserWService: {
       checkUserPort: {
