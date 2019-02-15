@@ -4,6 +4,7 @@ const app = express();
 const soap = require('soap');
 const http = require('http');
 const { User } = require('./models/user');
+const cors = require('cors')
 
 
 
@@ -16,6 +17,8 @@ require('./startup/validation')();
 app.get('/chat', function(req, res) {
   // res
 });
+
+app.use(cors())
 
 
 var service = {
