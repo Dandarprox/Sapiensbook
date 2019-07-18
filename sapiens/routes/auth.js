@@ -10,9 +10,8 @@ const assert = require('assert');
 
 const express = require('express');
 const router = express.Router();
-
 const ldapOptions = {
-  url: 'ldap://35.237.14.145:389',
+  url: 'ldap://35.232.195.188:389',
   timeout: 100000,
   connectTimeout: 10000,
   reconnect: true
