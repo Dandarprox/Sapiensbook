@@ -23,7 +23,7 @@
     "lodash": "^4.17.4",
     "mongoose": "^5.0.2",
     "soap": "^0.25.0",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.4.0",
     "socketio-sticky-session": "^0.4.3",
     "winston": "^2.4.0",
     "winston-mongodb": "^3.0.0"
